@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the planets of our solar system with live planetary data.">
+  <meta name="theme-color" content="#090d1b">
+  <title>Orbit — Planet Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Orbit home"><span class="brand-mark">✦</span> ORBIT<span class="brand-dot">.</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="#explore">Explore</a><a href="#about">About</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch colour theme"><span id="themeIcon">☼</span><span class="theme-label">Light mode</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="explore">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A JOURNEY THROUGH OUR COSMIC HOME</p>
+        <h1>Our solar system,<br><em>one world at a time.</em></h1>
+        <p class="hero-description">Eight planets. Countless mysteries. Explore the worlds orbiting our Sun and discover what makes each one extraordinary.</p>
+        <a class="scroll-link" href="#planetExplorer">DISCOVER THE PLANETS <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Illustration of planets orbiting a star">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+        <div class="sun"></div><div class="mini-planet mini-one"></div><div class="mini-planet mini-two"></div><div class="mini-planet mini-three"></div>
+        <span class="star star-a">✦</span><span class="star star-b">✧</span><span class="star star-c">✦</span>
+      </div>
+      <div class="hero-foot"><span>01 / THE SOLAR SYSTEM</span><span>SCROLL TO EXPLORE <b>↘</b></span></div>
+    </section>
+
+    <section class="explorer-section" id="planetExplorer">
+      <div class="section-intro">
+        <div><p class="eyebrow">THE CELESTIAL NEIGHBOURHOOD</p><h2>Meet the planets<span>.</span></h2></div>
+        <p class="section-note">Select a planet to reveal its<br class="desktop-only"> characteristics and cosmic facts.</p>
+      </div>
+      <div class="explorer">
+        <aside class="planet-sidebar">
+          <div class="sidebar-heading"><span>PLANETS</span><span class="count">08 WORLDS</span></div>
+          <div class="planet-list" id="planetList" aria-label="Choose a planet">
+            <button class="planet-choice selected" data-planet="earth"><span class="choice-dot earth-dot"></span><span>Earth</span><span class="choice-number">03</span></button>
+          </div>
+          <div class="sidebar-tip"><span>✦</span><p>Every planet has a story. Choose one to begin your journey.</p></div>
+        </aside>
+        <article class="planet-panel" aria-live="polite">
+          <div class="planet-panel-top"><span class="panel-kicker" id="planetIndex">PLANET 03 / 08</span><span class="planet-kind" id="planetType">TERRESTRIAL</span></div>
+          <div class="planet-main">
+            <div class="planet-visual-wrap">
+              <div class="planet-glow"></div>
+              <div class="planet-visual earth" id="planetVisual" role="img" aria-label="Illustration of Earth"></div>
+              <span class="visual-caption">SOLAR SYSTEM / MILKY WAY</span>
+            </div>
+            <div class="planet-copy">
+              <p class="eyebrow" id="planetTag">OUR HOME PLANET</p>
+              <h3 id="planetName">Earth</h3>
+              <p class="planet-description" id="planetDescription">The only known world to harbour life, Earth is a dynamic planet with vast oceans, a protective atmosphere and a remarkable diversity of living things.</p>
+              <div class="fact-grid">
+                <div class="fact"><span class="fact-label">DISTANCE FROM SUN</span><strong id="distance">149.6 million km</strong></div>
+                <div class="fact"><span class="fact-label">MASS</span><strong id="mass">5.97 × 10²⁴ kg</strong></div>
+                <div class="fact"><span class="fact-label">DIAMETER</span><strong id="diameter">12,742 km</strong></div>
+                <div class="fact"><span class="fact-label">ORBITAL PERIOD</span><strong id="period">365.26 days</strong></div>
+                <div class="fact"><span class="fact-label">AVG. TEMPERATURE</span><strong id="temperature">15 °C</strong></div>
+                <div class="fact"><span class="fact-label">GRAVITY</span><strong id="gravity">9.8 m/s²</strong></div>
+                <div class="fact"><span class="fact-label">KNOWN MOONS</span><strong id="moons">1</strong></div>
+                <div class="fact"><span class="fact-label">PLANET TYPE</span><strong id="typeValue">Terrestrial</strong></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-bottom"><span id="dataStatus">Planetary data loading…</span><span>DATA: SOLAR SYSTEM OPEN DATA API</span></div>
+        </article>
+      </div>
+      <p class="mobile-hint">Swipe or tap a planet name above to explore.</p>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-symbol">✧</div><div><p class="eyebrow">BUILT TO INSPIRE CURIOSITY</p><h2>The universe is<br><em>closer than you think.</em></h2></div>
+      <p class="about-copy">Orbit is an educational planet explorer created to make planetary science accessible. Information is retrieved from the Solar System OpenData API and presented in a responsive, interactive experience.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand"><a class="brand" href="#"><span class="brand-mark">✦</span> ORBIT<span class="brand-dot">.</span></a><p>A little closer to the cosmos.</p></div>
+    <div class="footer-about"><span class="footer-label">ABOUT THE TEAM</span><p>Created by the Hajime Cohort frontend development team as a collaborative capstone project.</p><p class="team-names">Team members: <strong>[Add team members' first names]</strong></p></div>
+    <div class="footer-links"><span class="footer-label">QUICK LINKS</span><a href="https://amakandukwu.com" target="_blank" rel="noopener">Amaka N ↗</a><a href="#" id="repoLink">Group GitHub Repository ↗</a><a href="https://tsacademyonline.com/" target="_blank" rel="noopener">TS Academy ↗</a></div>
+    <div class="footer-bottom"><span>© 2026 ORBIT PLANET EXPLORER</span><span>MADE FOR THE CURIOUS <b>✦</b></span></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
